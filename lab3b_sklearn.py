@@ -271,17 +271,5 @@ plt.show()
 ## as above. Compare their performance. Which one would you recommend, and why?
 
 
-log_model = Pipeline(steps=[
-    ('preprocessor', preprocessor),
-    ('model', LogisticRegression(
-        max_iter=1000, class_weight='balanced'
-    )),
-])
 
-log_model.fit(X_train, y_train)
-log_pred = log_model.predict(X_test)
-
-print('Model accuracy:', accuracy_score(y_test, log_pred))
-print()
-print(classification_report(y_test, log_pred))
 
